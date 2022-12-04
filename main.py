@@ -4,6 +4,7 @@ import sys
 from Day01.Day01Parser import Day01Parser
 from Day02.Day02Parser import Day02Parser
 from Day03.Day03Parser import Day03Parser
+from Day04.Day04Parser import Day04Parser
 from Shared.Parser import Parser
 from Shared.Solver import Part
 
@@ -67,6 +68,8 @@ def __get_parser(day: int) -> Parser:
         return Day02Parser()
     elif day == 3:
         return Day03Parser()
+    elif day == 4:
+        return Day04Parser()
     else:
         raise NotImplementedError('That day is not yet implemented!')
 
