@@ -22,4 +22,4 @@ class Day04Solver(Solver):
                    (r2[0] >= r1[0] and r2[0] <= r1[1]):
                     count = count + 1
 
-        return count
+        return str(count)
