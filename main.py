@@ -1,11 +1,15 @@
 import os
 import sys
 
+# -- This code is auto generated. Do not touch. -------
 from Day01.Day01Parser import Day01Parser
 from Day02.Day02Parser import Day02Parser
 from Day03.Day03Parser import Day03Parser
 from Day04.Day04Parser import Day04Parser
 from Day05.Day05Parser import Day05Parser
+from Day06.Day06Parser import Day06Parser
+# -----------------------------------------------------
+
 from Shared.Parser import Parser
 from Shared.Solver import Part
 
@@ -63,6 +67,7 @@ def __read_file() -> str:
 
 
 def __get_parser(day: int) -> Parser:
+    # -- This code is auto generated. Do not touch. ------
     if day == 1:
         return Day01Parser()
     elif day == 2:
@@ -73,8 +78,11 @@ def __get_parser(day: int) -> Parser:
         return Day04Parser()
     elif day == 5:
         return Day05Parser()
+    elif day == 6:
+        return Day06Parser()
     else:
         raise NotImplementedError('That day is not yet implemented!')
+    # ---------------------------------------------------
 
 
 if __name__ == '__main__':
