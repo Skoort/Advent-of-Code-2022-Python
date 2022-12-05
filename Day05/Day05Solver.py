@@ -1,12 +1,15 @@
+import copy
+
 from Shared.Solver import Solver, Part
 
 
 class Day05Solver(Solver):
-    def __init__(self, columns, instructions):
+    def __init__(self, columns: list[list[str]], instructions: list[(int, int, int)]):
         self.__columns = columns
         self.__instructions = instructions
 
     def solve(self, part: Part) -> str:
+        working_columns = copy.deepcopy(self.__columns)
         for instruction in self.__instructions:
             amount = instruction[0]
             from_index = instruction[1] - 1
@@ -14,12 +17,12 @@ class Day05Solver(Solver):
 
             if part == Part.A:
                 for i in range(amount):
-                    cargo = self.__columns[from_index].pop()
-                    self.__columns[to_index].append(cargo)
+                    cargo = working_columns[from_index].pop()
+                    working_columns[to_index].append(cargo)
             else:
-                from_column = self.__columns[from_index]
-                to_column = self.__columns[to_index]
-                self.__columns[from_index] = from_column[:-amount]
-                self.__columns[to_index] = [*to_column, *from_column[-amount:]]
+                from_column = working_columns[from_index]
+                to_column = working_columns[to_index]
+                working_columns[from_index] = from_column[:-amount]
+                working_columns[to_index] = [*to_column, *from_column[-amount:]]
 
-        return ''.join(column[-1] for column in self.__columns)
+        return ''.join(column[-1] for column in working_columns)
