@@ -78,7 +78,6 @@ from Shared.Parser import Parser
 class Day{day}Parser(Parser):
     def get_solver(self, text: str) -> Day{day}Solver:
         return Day{day}Solver()
-
 ''')
         __write_file(solver_path, f'''\
 from Shared.Solver import Solver, Part

@@ -8,6 +8,7 @@ from Day03.Day03Parser import Day03Parser
 from Day04.Day04Parser import Day04Parser
 from Day05.Day05Parser import Day05Parser
 from Day06.Day06Parser import Day06Parser
+from Day07.Day07Parser import Day07Parser
 # -----------------------------------------------------
 
 from Shared.Parser import Parser
@@ -80,6 +81,8 @@ def __get_parser(day: int) -> Parser:
         return Day05Parser()
     elif day == 6:
         return Day06Parser()
+    elif day == 7:
+        return Day07Parser()
     else:
         raise NotImplementedError('That day is not yet implemented!')
     # ---------------------------------------------------
